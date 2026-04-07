@@ -143,6 +143,12 @@ body {
     var(--bg-base);
 }
 
+.dashboard-map-section {
+  padding: 24px 28px 0;
+  width: 100%;
+}
+
+
 /* ==============================
    HEADER
 ============================== */
@@ -425,13 +431,18 @@ body {
 /* ==============================
    MAP INTEGRATION CARD
 ============================== */
-.map-integration-card {
-  margin-top: 24px;
-  background: #f8fafc;
-  border: 2px dashed #bbf7d0;
+.map-status-card {
+  margin-top: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--bg-border);
   border-radius: var(--radius-lg);
-  padding: 40px;
-  text-align: center;
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+  transition: var(--transition);
+}
+
+.map-status-card:hover {
+  box-shadow: var(--shadow-hover);
 }
 
 .map-integration-inner {
@@ -446,16 +457,16 @@ body {
   opacity: 0.6;
 }
 
-.map-integration-card h3 {
+.map-status-card h3 {
   font-size: 15px;
-  font-weight: 600;
-  color: var(--text-primary);
+  font-weight: 700;
+  color: #064e3b;
 }
 
-.map-integration-card p {
+.map-status-card p {
   font-size: 13px;
   color: var(--text-muted);
-  max-width: 420px;
+  text-align: center;
 }
 
 .integration-hint {

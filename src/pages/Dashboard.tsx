@@ -7,6 +7,8 @@ import { NDVIChart } from '../components/Dashboard/Charts/NDVIChart';
 import { RainfallChart } from '../components/Dashboard/Charts/RainfallChart';
 import { TemperatureChart } from '../components/Dashboard/Charts/TemperatureChart';
 import { RefreshCw, AlertTriangle, Satellite, MapPin } from 'lucide-react';
+import MapWrapper from '../components/Map/MapWrapper';
+
 
 const DEFAULT_LOCATION = {
   lat: 13.0827,
@@ -139,9 +141,15 @@ export function Dashboard() {
   };
 
   return (
-    <div className="dashboard">
-      {/* Header */}
-      <header className="dashboard-header">
+  <div className="dashboard">
+
+      <div className="dashboard-map-section">
+        <MapWrapper />
+      </div>
+
+
+    {/* Header */}
+    <header className="dashboard-header">
         <div className="header-brand">
           <div className="header-icon">
             <Satellite size={20} />
@@ -252,18 +260,13 @@ export function Dashboard() {
               {/* Comparison Panel (Auto-displays if 2 locations visited) */}
               <ComparisonPanel locations={comparisonList} />
 
-              {/* Map integration placeholder */}
-              <div className="map-integration-card">
+              <div className="map-status-card">
                 <div className="map-integration-inner">
-                  <Satellite size={32} className="map-icon" />
-                  <h3>Map Integration Ready</h3>
+                  <Satellite size={24} className="map-icon" />
+                  <h3>GIS Mapping Active</h3>
                   <p>
-                    Click any point on the GIS map to update this dashboard with real-time
-                    environmental data for that location.
+                    The map above is synced with your dashboard. Click any plot to update real-time analytics.
                   </p>
-                  <code className="integration-hint">
-                    window.updateDashboardLocation(lat, lng)
-                  </code>
                 </div>
               </div>
             </>
